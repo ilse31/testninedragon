@@ -6,11 +6,19 @@ import { Api } from '../helpers/API'
 const Category = () =>
 {
     const [ category, setcategory ] = useState( '' )
+    const [ loading, setLoading ] = useState( false )
     const onClick = () =>
     {
         Api.post( 'create_category', { name: category } )
-            .then( ( resp ) => console.log( resp ) )
+            .then( ( resp ) =>
+            {
+                console.log( resp )
+                setLoading( true )
+            }
+            )
             .catch( err => console.log( err ) )
+
+        setcategory( '' )
     }
 
     const [ listCategory, setListCategory ] = useState( [] )
@@ -28,7 +36,7 @@ const Category = () =>
     useEffect( () =>
     {
         getCategory()
-    }, [] )
+    }, [ loading ] )
 
 
     return (

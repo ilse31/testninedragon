@@ -25,6 +25,10 @@ const Register = () =>
             } )
             .catch( ( err ) => console.log( err.error )
             )
+        setEmail( '' )
+        setPassword( '' )
+        setName( '' )
+        setConFirmPass( '' )
     }
     return (
         <div>

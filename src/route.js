@@ -1,4 +1,5 @@
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+import Blogs from "./pages/Blogs";
 import Category from "./pages/Category";
 import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
@@ -14,6 +15,7 @@ const Routing = () => {
         <Route path='/register' element={<Register />} />
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/list-category' element={<Category />} />
+        <Route path='/blogs' element={<Blogs />} />
       </Routes>
     </Router>
   );
